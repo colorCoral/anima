@@ -88,7 +88,7 @@
     var csrf_token = $('[name=csrfmiddlewaretoken]').val();
 
     $.ajax({
-        url:'/anm/h_login/',
+        url:'/app_admin/login/',
         type:'post',
         data:{
             username:username,
@@ -106,7 +106,7 @@
                     if (href){
                         location.href = href;
                     }else {
-                        location.href = "/anm/h_index" ;
+                        location.href = "/app_admin/h_index" ;
                     }
             }
             else

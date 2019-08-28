@@ -3,10 +3,12 @@ from django.http import JsonResponse
 from django.contrib import auth
 
 from app01 import form
+from app01 import models
 
 # Create your views here.
 
-# 注册  http://127.0.0.1:8000/anm/h_register/
+
+# 注册
 def register(request):
 
     if request.method == 'GET':
@@ -21,10 +23,10 @@ def register(request):
             models.UserInfo.objects.create_user(**data)
             return redirect('login')
         else:
-            return render(request, 'admin/h_index.html', {'form_obj': form_obj})
+            return render(request, 'register.html', {'form_obj': form_obj})
 
 
-# 后端登录 mycolor1  130928asd
+# 后端登录 color  w123456
 def login(request):
 
     response_msg = {'code': None, 'msg': None}
@@ -57,3 +59,14 @@ def login(request):
             response_msg['msg'] = '验证码错误'
 
     return JsonResponse(response_msg)
+
+
+#  后端首页
+def index(request):
+
+    if request.method == 'GET':
+
+        return render(request, 'h_index.html')
+    else:
+        pass
+

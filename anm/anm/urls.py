@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # app01作为后端代码
-    url(r'^app_admin/', include('app01.urls', )),
+    url(r'^app_admin/', include('app01.urls',)),
 
 ]

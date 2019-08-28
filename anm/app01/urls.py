@@ -21,11 +21,13 @@ from app01 import views
 urlpatterns = [
 
     # 登录
-    url(r'^h_login/$', views.login, name='login'),
+    url(r'^login/$', views.login, name='login'),
 
     # 注册
     url(r'^h_register/$', views.register, name='register'),
 
+    # 后台首页
+    url(r'index/$', views.index, name="index")
 
 
 ]
